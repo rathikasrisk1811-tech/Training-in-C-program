@@ -1,0 +1,230 @@
+//Hackerearth STRONG NUMBER
+#include <stdio.h>
+int main() {
+    int T;
+    scanf("%d", &T);
+    while (T--) {
+        int n, temp, digit;
+        int sum = 0;
+        scanf("%d", &n);
+        temp = n;
+        while (temp > 0) {
+            digit = temp % 10;
+            int fact = 1;
+            for (int i = 1; i <= digit; i++) {
+                fact *= i;
+            }
+            sum += fact;
+            temp /= 10;
+        }
+        if (sum == n)
+            printf("YES\n");
+        else
+            printf("NO\n");
+    }
+    return 0;
+}
+
+//Leetcode-1518. Water Bottles
+int numWaterBottles(int numBottles, int numExchange) {
+    int total = numBottles;
+    int empty = numBottles;
+    while(empty>=numExchange)
+    {
+        int newBottle = empty/numExchange;
+        total = total+newBottle;
+        empty=newBottle +(empty%numExchange);
+    }
+    return total;
+}
+//Leetcode-202. Happy Number
+bool isHappy(int n) {
+    int sum, digit;
+    while (n != 1 && n != 4) {
+        sum = 0;
+        while (n > 0) {
+            digit = n % 10;
+            sum += digit * digit;
+            n /= 10;
+        }
+        n = sum;
+    }
+    return n == 1;
+}
+// Hackerrank-Rectangle Pattern 6
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n1, n2;
+    scanf("%d%d",&n1,&n2);
+    for(int row=1;row<=n1;row++)
+    {
+        for(int col=1;col<=n2;col++){
+            printf("*");
+        }
+         printf("\n");
+    }
+   
+    return 0;
+}
+
+// Hackerrank-Staircase of Stars
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    scanf("%d",&n);
+    for(int row=1;row<=n;row++){
+        for(int col=1;col<=n;col++){
+            if(row==n || col==1 || row>=col)
+            {
+                printf("*");
+            }else{
+                printf(" ");
+            }
+
+        }           printf("\n");
+    } 
+    return 0;
+}
+
+// Hackerrank-Descending Star Steps
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    scanf("%d",&n);
+    for (int row=1;row<=n;row++)
+    {
+        for(int col=1;col<=n;col++){
+            if(row==1 || col==1 || row+col <=n+1)
+        {
+            printf("*");
+        }
+        else{
+            printf(" ");
+        }
+        } printf("\n");
+    }
+    return 0;
+}
+
+// Hackerrank-Binary Pattern 6
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    for(int row=1;row<=n;row++)
+    {
+        for(int col=1;col<=n;col++)
+        {
+            if(row==1 || col==1 || row+col <=n+1){
+                int row_col=(row+col)%2;
+                if(row_col==0)
+                {
+                    printf("1");
+                }
+                else{
+                    printf("0");
+                }
+        }
+        }
+        printf("\n");
+    } 
+    return 0;
+}
+
+// Hackerrank-Asterisk Pattern: X with Horizontal and Vertical Cut
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    for(int row=1; row<=n;row++)
+    {
+        for(int col=1;col<=n;col++){
+                if(col==(n+1)/2 || row==(n+1)/2 || row==col|| row+col==n+1 ){
+                printf("* ");
+            }else{
+                    printf("  ");
+                }
+        }
+            printf("\n");
+    }
+
+    return 0;
+}
+
+// Hackerrank-Hollow Diamond Pattern 7
+#include <stdio.h>
+
+int main() {
+    int row, col, n,s;
+    scanf("%d",&n);
+    for(row=1;row <=n;row++) {
+        for(s=1;s<= n-row;s++)
+            printf(" ");
+        for(col=1;col<=2*row-1;col++) {
+            if(col ==1||col==2*row-1)
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+    for(row=n-1;row>=1;row--) {
+        for(s=1;s<=n-row;s++)
+            printf(" ");
+        for(col=1;col<=2*row-1;col++) {
+            if(col==1||col==2*row-1)
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+// Hackerrank-Filled Alphabet Pyramid Pattern
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    for(int row=1; row<=n;row++)
+    {
+        for(int col=1;col<=n-row;col++)
+        {
+            printf("  ");
+        }
+        char ch = 'A';
+        for(int col=1;col<=2*row-1;col++)
+        {
+            printf("%c ", ch);
+            ch++;
+        }
+        printf("\n");
+    }
+    return 0;
+}
