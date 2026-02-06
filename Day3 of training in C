@@ -1,0 +1,178 @@
+//Hackerrank-Manual Power Calculator
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int base, exponent;
+    int result=1;
+    scanf("%d%d",&base,&exponent);
+    for(int i=0; i<exponent;i++)
+    {
+        result= result*base;
+    }
+    printf("%d", result);   
+    return 0;
+}
+
+//Leetcode-509. Fibonacci Number
+int fib(int n){
+    if(n==0 || n==1)
+    {
+        return n;
+    }
+    int a=0, b=1,c;
+    for(int i=2; i<=n; i++)
+    {
+        c=a+b;
+        a=b;
+        b=c;
+    }
+    return b;
+}
+
+//Leetcode-1137. N-th Tribonacci Number
+int tribonacci(int n) {
+    if(n==0|| n==1){
+        return n;
+    }   
+    int a = 0, b=1, c=1, d;
+    for(int i=3; i<=n; i++)
+    {
+        d=a+b+c;
+        a=b;
+        b=c;
+        c=d;
+   }
+   return c;
+}
+
+
+//Leetcode-2427. Number of Common Factors
+int commonFactors(int a, int b) {
+    int count=0;
+    for(int i =1; i<=a && i<=b;i++)
+    {
+        if(a%i==0 && b%i==0){
+            count++;
+        }
+    }
+    return count;
+}
+
+//Leetcode-1952. Three Divisors
+bool isThree(int n) {
+    int count=0;
+    for(int i=1; i<=n;i++){
+        if(n%i==0){
+            count++;
+        }
+    }
+    if(count==3){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+// Geeksforgeeks-Count Digits
+int countDigits(int n) {
+    
+    int count=0;
+    while(n!=0)
+{
+   count++;
+   n=n/10;
+}
+    return count;
+}
+
+//Hackerrank-Maximum and Minimum Digit
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    char n[100];
+    int max=0,min=1000;
+    scanf("%s",n);
+    for(int i=0;i<=strlen(n);i++)
+    {
+        if(n[i]>='0' && n[i]<='9')
+        {
+            int digit=n[i]-'0';
+            if(digit>max){
+                max=digit;
+            }
+            if(digit<min)
+            {
+                min=digit;
+            }
+        }
+    }
+        printf("%d %d", max, min);
+    return 0;
+}
+
+//Codechef-Reverse a Number
+#include <stdio.h>
+int main() {
+    int n,rev=0;
+    scanf("%d", &n);
+    while(n>0){
+        int r=n%10;
+        rev=rev*10+r;
+        n/=10;
+    }printf("%d",rev);
+    return 0;
+}
+
+//9. Palindrome Number
+#include <stdio.h>
+#include <stdbool.h>
+bool isPalindrome(int n){
+    int original_number = n;
+    long long reversed_number =0;
+    if(n<0){
+        return false;
+    }while(n!= 0){
+        int remainder = n%10;
+        reversed_number = reversed_number * 10 + remainder;
+        n/=10;
+    }return original_number == reversed_number;
+}
+
+//Is it an Armstrong Number?
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int num,temp,tempnum;
+    int count=0;
+    int digit,total=0;
+    scanf("%d",&num);
+    temp=num;
+        
+    tempnum=num;
+    while(tempnum!=0){
+        count++;
+        tempnum=tempnum/10;
+    }    
+    tempnum=num;
+    while(tempnum>0){
+        digit=tempnum%10;
+        total=total+pow(digit,count);
+        tempnum=tempnum/10;
+    }
+    if(total==temp){
+        printf("true");
+    }
+    else{
+        printf("false");
+    }
+    return 0;
+}
