@@ -1,0 +1,201 @@
+//Hackerrank-Perform basic arithmetic operations-Hackerrank
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a, b, sum, difference, product, quotient, remainder;
+    scanf("%d", &a);
+    scanf("%d", &b);
+    sum=a+b;
+    difference=a-b;
+    product=a*b;
+    quotient=a/b;
+    remainder=a%b;
+    printf("Sum: %d\n", sum);
+    printf("Difference: %d\n", difference);
+    printf("Product: %d\n", product);
+    if(b !=0){
+    printf("Quotient: %d\n", quotient);
+    }else{
+        printf("Cannot divided by zero");
+    }
+    printf("Remainder: %d\n", remainder);
+    return 0;
+}
+
+//Hackerrank-Calculate total bill before tax, add tax, and check whether the final bill is within or over the budget
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int c1, q1, c2, q2, c3, q3, budget;
+    scanf("%d %d\n", &c1, &q1);
+    scanf("%d %d\n", &c2, &q2);
+    scanf("%d %d\n", &c3, &q3);
+    scanf("%d\n", &budget);
+    float total = ((c1 * q1) + (c2 * q2) + (c3 * q3));
+    printf("Total (Before Tax): %.2f\n", total);
+    float totalaftertax = (total + (total * 10 / 100));
+    printf("Total (After Tax): %.2f\n", totalaftertax);
+    if(budget >= totalaftertax)
+        printf("Within Budget");
+    else
+        printf("Over Budget");
+
+    return 0;
+}
+
+//Leetcode-2481. Minimum Cuts to Divide a Circle
+int numberOfCuts(int n) {
+        if(n==1)
+    {
+        return 0;
+    }
+    else if(n%2==0)
+    {
+        return (n/2);
+    }
+    else
+    {
+        return n;
+    }
+}
+
+//Leetcode-1025. Divisor Game
+bool divisorGame(int n) {
+    if((n&1)==0){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
+//Hackerrank-Greatest of Three Numbers
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a, b, c;
+    scanf("%d\n", &a);
+    scanf("%d\n", &b);
+    scanf("%d\n", &c);
+    if(a == b || b == c || c == a)
+        printf("There is a tie for the greatest number");
+    else if(a>b && a>c)
+        printf("%d is the greatest", a);
+    else if(c>b)
+        printf("%d is the greatest", c);
+    else
+        printf("%d is the greatest", b);
+        
+    return 0;
+}
+
+//Hackerrank-Character Classifier 
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    char ch;
+    scanf("%c", &ch);
+    if(ch>='A' && ch<='Z')
+        printf("Uppercase Alphabet");
+    else if(ch>='a' && ch<='z')
+        printf("Lowercase Alphabet");
+    else if(ch>='0' && ch<='9')
+        printf("Digit");
+    else 
+        printf("Special Character");
+    return 0;
+}
+
+//Hackerrank-Triangle Type Detector
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a, b, c;
+    scanf("%d%d%d", &a, &b, &c);
+    if((a+b>c)&&(b+c>a)&&(c+a>b))
+        if(a==b && b==c)
+        printf("Equilateral Triangle");
+        else if(a==b)
+            printf("Isosceles Triangle");
+        else 
+            printf("Scalene Triangle");
+    else
+        printf("Not a valid triangle");
+    return 0;
+}
+
+//Hackerrank-Leap Year Checker
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int year;
+    scanf("%d", &year);
+    if((year%4==0 && year%100!=0) || year%400==0){
+        printf("Leap Year");
+    }else{
+        printf("Not a Leap Year");
+    }
+    return 0;
+}
+
+//Hackerrank-Print All Factors
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n, a;
+    scanf("%d", &n);
+    for(int i=1; i<=n;i++){
+        a=n%i;
+        if(a==0){
+            printf("%d ", i);
+        }
+    }
+    return 0;
+}
+
+//Hackerrank-Is It a Prime Number?
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n,count=0;
+    scanf("%d", &n);
+    for(int i=1; i<=n; i++)
+    {
+        if(n%i==0){
+         count++;
+    }
+    }
+    if(count==2)
+    {
+        printf("Prime");
+    }
+    else{
+    printf("Not Prime");
+    }
+    return 0;
+}
