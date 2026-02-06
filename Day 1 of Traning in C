@@ -1,0 +1,181 @@
+//Counts the number of digits in a number
+#include <stdio.h>
+int main(){
+    int num1, count;
+scanf("%d", &num1);
+if(num1==0){
+    count=1;
+}
+else{
+    while(num1!=0)
+    {
+        count++;
+        num1= num1/10;
+    }
+}
+    printf("%d", count);
+    return 0;
+}
+
+//To find the sum of digits of a number
+#include <stdio.h>
+int main()
+{
+    int num1, digit, sum;
+    scanf("%d",&num1);
+    while(num1>0)
+    {
+        digit = num1%10;
+        sum = sum+digit;
+        num1= num1/10;
+    }
+    printf("%d", sum);
+    return 0;
+}
+
+//Convert lowercase letters to uppercase
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char str1[100];
+    int i;
+    fgets(str1,sizeof(str1),stdin);
+    for(i=0;str1[i]!='\0';i++)
+    {
+        if(str1[i]>='a' && str1[i]<='z')
+        {
+            str1[i]=str1[i]-32;
+        }
+    }
+    printf("%s",str1);
+    return 0;
+}
+
+//Convert uppercase letters to lowercase
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char str1[100];
+    int i;
+    fgets(str1,sizeof(str1),stdin);
+    for(i=0;str1[i]!='\0';i++)
+    {
+        if(str1[i]>='A' && str1[i]<='Z')
+        {
+            str1[i]=str1[i]+32;
+        }
+    }
+    printf("%s",str1);
+    return 0;
+}
+
+//Find largest number among three numbers without using if-else
+#include <stdio.h>
+int main()
+{
+ int num1, num2, num3, largest;
+ scanf("%d %d %d", &num1, &num2, &num3);
+ largest = (num1>num2)?(num1>num3?num1:num3):(num2>num3?num2:num3);
+ printf("%d",largest);
+ return 0;
+}
+
+//Find second largest number among three numbers without using if-else
+#include <stdio.h>
+int main()
+{
+ int num1, num2, num3, largest,second;
+ scanf("%d%d%d", &num1, &num2, &num3);
+ second =(num1 > num2 && num1 < num3) || (num1 > num3 && num1 < num2) ? num1 :((num2 > num1 && num2< num3) || (num2 > num3 && num2 < num1) ? num2 :num3);
+ printf("%d",second);
+ return 0;
+}
+
+//Find  largest number among three numbers using if-else
+#include <stdio.h>
+int main()
+{
+   int num1, num2, num3, largest, second;
+   scanf("%d%d%d", &num1, &num2, &num3);
+   if(num1>num2 && num1>num3)
+   {
+    printf("%d", num1);
+   }
+   if(num2>num3){
+    printf("%d", num2);
+   }
+   else{
+    printf("%d", num3);
+   }
+   return 0;
+}
+
+//Find second largest number among three numbers using if-else
+#include <stdio.h>
+int main()
+{
+    int num1, num2, num3, largest,second;
+    scanf("%d%d%d", &num1, &num2, &num3);
+    if((num1 > num2 && num1 < num3) || (num1 > num3 && num1 < num2))
+    {
+        printf("%d",num1);
+    }
+    if((num2 > num1 && num2< num3) || (num2 > num3 && num2 < num1)){
+       printf("%d",num2);
+    }
+    else{
+        printf("%d", num3);
+    }
+    return 0;
+}
+
+//Swap two numbers without using a temporary variable:
+//METHOD 1:
+#include <stdio.h>
+int main() {
+    int a, b;
+    scanf("%d %d",&a, &b);
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    printf("a = %d, b = %d", a, b);
+    return 0;
+}
+
+//METHOD 2:
+#include <stdio.h>
+int main() {
+    int a, b;
+    scanf("%d %d",&a, &b);
+    a = a * b;
+    b = a / b;
+    a = a / b;
+    printf("a = %d, b = %d", a, b);
+    return 0;
+}
+
+//METHOD 3:
+#include <stdio.h>
+int main() {
+    int a, b;
+    scanf("%d %d",&a, &b);
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+    printf("a = %d, b = %d", a, b);
+    return 0;
+}
+
+//Check wheather a number is odd or even without using arithmetic operators
+#include <stdio.h>
+int main() {
+    int n;
+    scanf("%d", &n);
+    if (n & 1)
+        printf("Odd");
+    else
+        printf("Even");
+    return 0;
+}
